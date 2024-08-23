@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Editar docente</h1>
+    <form th:action="@{/docenteGrupos/save}" th:object="${docenteGrupo}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="docente">Docente:</label>
+                    <select name="docenteId" id="docente" th:field="*{docente.id}">
+                        <option th:each="docente : ${docentes}"
+                                th:value="${docente.id}"
+                                th:text="${docente.nombre}"
+                                th:selected="${docente.id == docenteGrupo.docente.id}"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="grupo">Grupo:</label>
+                    <select name="grupoId" id="grupo" th:field="*{grupo.id}">
+                        <option th:each="grupo : ${grupos}"
+                                th:value="${grupo.id}"
+                                th:text="${grupo.nombre}"
+                                th:selected="${grupo.id == docenteGrupo.grupo.id}"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="anio">Año:</label>
+                    <input class="form-control" th:field="*{anio}" id="anio" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="ciclo">Ciclo:</label>
+                    <input class="form-control" th:field="*{ciclo}" id="ciclo" required>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button> |
+        <a th:href="@{/docenteGrupos}">Regresar</a>
+    </form>
+</div>
+
+</html>

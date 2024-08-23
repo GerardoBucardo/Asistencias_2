@@ -26,6 +26,9 @@ public class Grupo {
     @ManyToMany(mappedBy = "grupos")
     private Set<Docente> docentes = new HashSet<>();
 
+    @ManyToMany(mappedBy = "grupos")
+    private Set<Estudiante> estudiantes = new HashSet<>();
+
     public Integer getId() {
         return id;
     }

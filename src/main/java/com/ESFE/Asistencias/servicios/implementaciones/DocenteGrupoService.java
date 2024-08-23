@@ -2,15 +2,16 @@ package com.ESFE.Asistencias.servicios.implementaciones;
 
 import com.ESFE.Asistencias.entidades.DocenteGrupo;
 import com.ESFE.Asistencias.repositorios.IDocenteGrupoRepository;
-import com.ESFE.Asistencias.repositorios.IDocenteRepository;
 import com.ESFE.Asistencias.servicios.interfaces.IDocenteGrupoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class DocenteGrupoService implements IDocenteGrupoServices {
     @Autowired
     private IDocenteGrupoRepository docenteGrupoRepository;

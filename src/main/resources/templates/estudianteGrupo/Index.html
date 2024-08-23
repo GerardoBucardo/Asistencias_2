@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http:www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="/Layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Listado de docentes</h1>
+    <a th:href="@{/estudianteGrupos/create}" class="btn btn-outline-primary">Nueva Asignación</a>
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Estudiante</th>
+                <th>Grupo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${estudianteGrupos}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.estudiante.nombre}"></td>
+                <td th:text="${item.grupo.nombre}"></td>
+                <td>
+                    <a th:href="@{/estudianteGrupos/details/{id} (id=${item.id})}" class="btn btn-outline-secondary">Detalles</a>
+                    <a th:href="@{/estudianteGrupos/edit/{id} (id=${item.id})}" class="btn btn-outline-info">Editar</a>
+                    <a th:href="@{/estudianteGrupos/remove/{id} (id=${item.id})}" class="btn btn-outline-danger">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<body>
+
+</body>
+</html>

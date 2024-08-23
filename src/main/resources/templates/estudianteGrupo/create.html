@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http:www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/Layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Crear nueva Asignación</h1>
+    <form th:action="@{/estudianteGrupos/save}" th:object="${estudianteGrupo}" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="estudiante">Estudiante:</label>
+                    <select name="estudianteId" id="estudiante">
+                        <option th:each="estudiante : ${estudiantes}" th:value="${estudiante.id}" th:text="${estudiante.nombre}"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="grupo">Grupo</label>
+                    <select name="grupoId" id="grupo">
+                        <option th:each="grupo : ${grupos}" th:value="${grupo.id}" th:text="${grupo.nombre}"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button> |
+        <a th:href="@{/estudianteGrupos}">Regresar</a>
+    </form>
+</div>

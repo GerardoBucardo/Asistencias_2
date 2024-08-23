@@ -1,0 +1,36 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http:www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/Layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Crear nuevo estudiante</h1>
+    <form th:action="@{/estudiantes/save}" th:object="${estudiante}" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del estudiante" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" th:field="*{email}" id="email" placeholder="Escriba el email del estudiante" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="pin">Pin</label>
+                    <input class="form-control" th:field="*{pin}" id="pin" cols="12" rows="3" required>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button> |
+        <a th:href="@{/estudiantes}">Regresar</a>
+    </form>
+</div>

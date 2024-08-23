@@ -28,7 +28,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <textarea class="form-control" th:field="*{email}" id="email" cols="12" rows="3" required></textarea>
+                    <input class="form-control" th:field="*{email}" id="email" cols="12" rows="3" required>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="telefono">Telefono</label>
-                    <textarea class="form-control" th:field="*{telefono}" id="telefono" cols="12" rows="3" required></textarea>
+                    <input class="form-control" th:field="*{telefono}" id="telefono" cols="12" rows="3" required>
                 </div>
             </div>
         </div>
@@ -44,12 +44,12 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="escuela">Escuela</label>
-                    <textarea class="form-control" th:field="*{escuela}" id="escuela" cols="12" rows="3" required></textarea>
+                    <input class="form-control" th:field="*{escuela}" id="escuela" cols="12" rows="3" required>
                 </div>
             </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button> |
         <a th:href="@{/docentes}">Regresar</a>
     </form>
 </div>
