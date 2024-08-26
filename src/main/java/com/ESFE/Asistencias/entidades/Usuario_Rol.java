@@ -3,7 +3,7 @@ package com.ESFE.Asistencias.entidades;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "usuario-rol")
+@Table(name = "usuario_rol")
 public class Usuario_Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
